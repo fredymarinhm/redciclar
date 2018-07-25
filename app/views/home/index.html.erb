@@ -1,0 +1,9 @@
+<h1>ImageGram</h1>
+<%- if user_signed_in? %>
+    <h3>¡ Bienvenido <%= current_user.name %> !</h3>
+    <div class="row">
+        <%= render @images %>
+    </div>
+<% else %>
+    <h3>Por favor inicia sesión para ver imágenes owo</h3>
+<% end %>
