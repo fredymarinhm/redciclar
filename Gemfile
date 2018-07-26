@@ -54,6 +54,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 group :production do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'rails_12factor'
 end
