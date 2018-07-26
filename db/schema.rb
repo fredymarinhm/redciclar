@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726015649) do
+ActiveRecord::Schema.define(version: 20180726220507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,38 @@ ActiveRecord::Schema.define(version: 20180726015649) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer  "code"
     t.string   "description"
     t.float    "price"
     t.float    "amount"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.integer  "points"
+    t.index ["order_id"], name: "index_items_on_order_id", using: :btree
+    t.index ["product_id"], name: "index_items_on_product_id", using: :btree
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "status"
+    t.integer  "code"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "user_id"
+    t.integer  "recycling_station_id"
+    t.integer  "store_id"
+    t.index ["recycling_station_id"], name: "index_orders_on_recycling_station_id", using: :btree
+    t.index ["store_id"], name: "index_orders_on_store_id", using: :btree
+    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.datetime "date"
+    t.integer  "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_points_on_user_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -92,9 +118,17 @@ ActiveRecord::Schema.define(version: 20180726015649) do
     t.datetime "birthdate"
     t.string   "address"
     t.string   "telephone"
+    t.string   "password"
+    t.string   "password_confirmation"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "images", "users"
+  add_foreign_key "items", "orders"
+  add_foreign_key "items", "products"
+  add_foreign_key "orders", "recycling_stations"
+  add_foreign_key "orders", "stores"
+  add_foreign_key "orders", "users"
+  add_foreign_key "points", "users"
 end
