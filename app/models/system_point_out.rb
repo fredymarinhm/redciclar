@@ -1,0 +1,2 @@
+class SystemPointOut < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class RecyclingStation < ApplicationRecord
+end

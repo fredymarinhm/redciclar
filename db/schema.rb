@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180725170526) do
+ActiveRecord::Schema.define(version: 20180726015649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,54 @@ ActiveRecord::Schema.define(version: 20180725170526) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.integer  "code"
+    t.string   "description"
+    t.float    "price"
+    t.float    "amount"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.float    "price"
+    t.float    "amount"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "recycling_stations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "telephone"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.string   "name"
+    t.string   "telephone"
+    t.string   "email"
+    t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "system_point_ins", force: :cascade do |t|
+    t.datetime "date"
+    t.integer  "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "system_point_outs", force: :cascade do |t|
+    t.datetime "date"
+    t.integer  "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,6 +87,11 @@ ActiveRecord::Schema.define(version: 20180725170526) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
+    t.string   "last_name"
+    t.string   "document"
+    t.datetime "birthdate"
+    t.string   "address"
+    t.string   "telephone"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

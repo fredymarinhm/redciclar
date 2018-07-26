@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: 1
+  name: MyString
   description: MyString
   price: 1.5
   amount: 1.5
+  image: MyString
 
 two:
-  code: 1
+  name: MyString
   description: MyString
   price: 1.5
   amount: 1.5
+  image: MyString
