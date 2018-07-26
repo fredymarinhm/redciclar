@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: clase7Julio_development
+  database: redciclardb_development
   host: localhost
   username: postgres
   password: 'root'
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: clase7Julio_test
+  database: redciclardb_test
   host: localhost
   username: postgres
   password: 'root'
@@ -86,7 +86,7 @@ test:
 #
 production:
   <<: *default
-  database: clase7Julio_production
+  database: redciclardb
   host: localhost
   username: postgres
   password: <%= ENV['CLASE7JULIO_DATABASE_PASSWORD'] %>
