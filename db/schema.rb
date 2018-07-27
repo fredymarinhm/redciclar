@@ -112,9 +112,9 @@ ActiveRecord::Schema.define(version: 20180726220507) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name"
-    t.string   "last_name"
-    t.string   "document"
+    t.string   "name",                                null: false
+    t.string   "last_name",                           null: false
+    t.string   "document",                            null: false
     t.datetime "birthdate"
     t.string   "address"
     t.string   "telephone"
