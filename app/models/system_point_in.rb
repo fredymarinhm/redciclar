@@ -1,2 +1,0 @@
-class SystemPointIn < ApplicationRecord
-end

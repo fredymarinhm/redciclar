@@ -90,20 +90,6 @@ ActiveRecord::Schema.define(version: 20180726220507) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "system_point_ins", force: :cascade do |t|
-    t.datetime "date"
-    t.integer  "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "system_point_outs", force: :cascade do |t|
-    t.datetime "date"
-    t.integer  "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

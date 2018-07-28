@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       post 'sign_up' => 'registration#create'
       resources :images
       resources :products
+      resources :points
     end
   end
 end
