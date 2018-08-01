@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20180726220507) do
     t.datetime "date"
     t.integer  "amount"
     t.datetime "created_at", null: false
-    t.datestime "updated_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_points_on_user_id", using: :btree
   end
