@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       resources :images
       resources :products
       resources :points
+      resources :items
+      resources :orders
     end
   end
 end
