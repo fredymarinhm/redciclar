@@ -5,8 +5,8 @@
 
  --Insert user
 INSERT INTO public.users(
- 	 id,email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, created_at, updated_at, name, last_name, document, birthdate, address, telephone, password, password_confirmation)
-	VALUES (1,'prueba@prueba.com', '$2a$11$6/K8/R.dIC8BzAJ81tBlQOPKlQdUAVIiAR49qkKfBZZA0.Yz1NRWe', null, null, null, '2018-07-28', '2018-07-28', 'Prue', 'ba', 'C.C. 1234', '2018-07-28', null, null, null, null);
+ 	 email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, created_at, updated_at, name, last_name, document, birthdate, address, telephone, password, password_confirmation)
+	VALUES ('prueba@prueba.com', '$2a$11$6/K8/R.dIC8BzAJ81tBlQOPKlQdUAVIiAR49qkKfBZZA0.Yz1NRWe', null, null, null, '2018-07-28', '2018-07-28', 'Prue', 'ba', 'C.C. 1234', '2018-07-28', null, null, null, null);
 
 --Insert points
 INSERT INTO public.points(id, date, amount, created_at, updated_at, user_id)
