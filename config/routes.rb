@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       resources :points
       resources :items
       resources :orders
+      resources :stores
+      resources :recycling_stations
     end
   end
 end
